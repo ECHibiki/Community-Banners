@@ -30,6 +30,5 @@ class CreateBanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bans');
     }
 }

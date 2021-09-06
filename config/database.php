@@ -48,7 +48,7 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'freeads'),
+            'database' => env('DB_DATABASE', 'laravel-freeads'),
             'username' => env('DB_USERNAME', 'tester'),
             'password' => env('DB_PASSWORD', 'Test1234@@@'),
             'unix_socket' => env('DB_SOCKET', ''),

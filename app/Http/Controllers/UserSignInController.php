@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\AntiSpam;
 use App\Mod;
 use App\Ban;
 use DB;
@@ -27,6 +28,12 @@ class UserSignInController extends Controller
 			'name'=>'required',
 			'pass'=>'required'
 		]);
+
+		$bf_resp = $this->validateNameBruteForce($request->input("name"));
+		if($bf_resp->count() > intval(env('MAX_PASS_ATTEMPTS_PER_CYCLE'))){
+			return response()->json(['warn'=>'Too many password attempts'], 401);
+		}
+		$this->updateNameBruteForce($request->input("name"));
 
 		$token = $this->returnJWT($request->input("name"), $request->input("pass"), false);
 		if(!$token){
@@ -81,5 +88,23 @@ class UserSignInController extends Controller
 		return Ban::query()
 			->where("hardban", "=", "1")
 			->where("fk_name", "=", $name)->count() > 0;
+	}
+
+	// needs test case
+	public function validateNameBruteForce($name){
+		return DB::table('antispam')
+			->where('name','=',$name)
+			->where('type','=','login')
+			->where('unix', '>=',
+				Carbon::now()->subSeconds(intval(env('NAME_LOGIN_COOLDOWN',60)))->timestamp);
+	}
+	// needs test case
+	public function updateNameBruteForce($name){
+		DB::table('antispam')
+			->where('unix', '<',
+				Carbon::now()->subSeconds(intval(env('NAME_LOGIN_COOLDOWN',60)))->timestamp)
+			->where('type', '=', 'login')
+			->delete();
+		AntiSpam::create(['name'=>$name, 'unix' => 	Carbon::now()->timestamp, 'type'=>'login']);
 	}
 }

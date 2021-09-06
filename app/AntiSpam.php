@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class AntiSpam extends Model
 {
-    protected $fillable=['name', 'unix'];
+    protected $fillable=['name', 'unix', 'type'];
     protected $table = 'antispam';
 }

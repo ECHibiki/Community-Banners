@@ -15,7 +15,7 @@ class AntispamCd extends Migration
     {
       if(!Schema::hasTable('antispam')){
         Schema::create('antispam', function (Blueprint $table) {
-          $table->string('name',30)->unique();
+          $table->string('name',30);
           $table->integer('unix');
           $table->date('updated_at');
           $table->date('created_at');

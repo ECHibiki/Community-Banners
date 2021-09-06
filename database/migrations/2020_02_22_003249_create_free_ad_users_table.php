@@ -30,6 +30,5 @@ class CreateFreeAdUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('free_ad_users');
     }
 }
