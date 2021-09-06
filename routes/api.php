@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 
 	// standard api routes
 	Route::post("create", "UserCreationController@createNewUser");
-	//Route::post("create", "UserCreationController@rejectUserCreation");
+	// Route::post("create", "UserCreationController@rejectUserCreation");
 	Route::get("all", "PageGenerationController@getLimitedInfo");
 	Route::get("banner", "PageGenerationController@GenerateAdJSON");
 

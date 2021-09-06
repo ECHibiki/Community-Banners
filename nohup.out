@@ -1,0 +1,22 @@
+Laravel development server started: http://127.0.0.1:8000
+[Sat Feb 29 22:31:05 2020] PHP 7.4.3 Development Server (http://127.0.0.1:8000) started
+Laravel development server started: http://127.0.0.1:8000
+[Sat Feb 29 23:55:08 2020] PHP 7.4.3 Development Server (http://127.0.0.1:8000) started
+[Sat Feb 29 23:55:12 2020] 127.0.0.1:58282 Accepted
+[Sat Feb 29 23:55:12 2020] 127.0.0.1:58282 Closing
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58358 Accepted
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58360 Accepted
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58358 [200]: GET /js/app.js
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58358 Closing
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58360 [200]: GET /css/app.css
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58360 Closing
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58414 Accepted
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58414 Closing
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58418 Accepted
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58418 [200]: GET /09b24e31234507.564a1d23c07b4.gif
+[Sat Feb 29 23:55:13 2020] 127.0.0.1:58418 Closing
+[Sat Feb 29 23:55:14 2020] 127.0.0.1:58556 Accepted
+[Sat Feb 29 23:55:14 2020] 127.0.0.1:58556 [200]: GET /favicon.ico
+[Sat Feb 29 23:55:14 2020] 127.0.0.1:58556 Closing
+Laravel development server started: http://127.0.0.1:8001
+[Sat Feb 29 23:55:19 2020] PHP 7.4.3 Development Server (http://127.0.0.1:8001) started

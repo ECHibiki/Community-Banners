@@ -34,7 +34,7 @@ class ConfidentialInfoController extends Controller
 
 // can this be tested?
 	public function checkDuplicateBanner($tmp_fname){
-		$hash = shell_exec("blockhash " . $tmp_fname);
+		$hash = shell_exec("blockhash " . escapeshellarg($tmp_fname));
 		if($hash){
 			$hash = explode(" ", $hash)[0];
 		} else{
@@ -101,7 +101,8 @@ class ConfidentialInfoController extends Controller
 
 	public function createSmallInfo(Request $request, $hash){
 		$request->validate([
-			'image'=>'required|image|dimensions:width='. env('MIX_IMAGE_DIMENSIONS_SMALL_W', '300') .',height=' . env('MIX_IMAGE_DIMENSIONS_SMALL_H', '140'),
+			'image'=>'required|image|dimensions:width='. env('MIX_IMAGE_DIMENSIONS_SMALL_W', '300') .',height=' . env('MIX_IMAGE_DIMENSIONS_SMALL_H', '140') .
+			 '|between:0, '.env('MIX_MAX_FILE_SIZE', '2000'),
 		]);
 		$fname = PageGenerationController::StoreAdImage($request->file('image'));
 		$this->addUserJSON($fname, env('MIX_APP_URL', 'https://kissu.moe'), 'small');
@@ -124,7 +125,8 @@ class ConfidentialInfoController extends Controller
 
 	public function createWideInfo(Request $request, $hash){
 		$request->validate([
-			'image'=>'required|image|dimensions:width='. env('MIX_IMAGE_DIMENSIONS_W', '500') .',height=' . env('MIX_IMAGE_DIMENSIONS_H', '90'),
+			'image'=>'required|image|dimensions:width='. env('MIX_IMAGE_DIMENSIONS_W', '500') .',height=' . env('MIX_IMAGE_DIMENSIONS_H', '90')
+				. '|between:0, ' . env('MIX_MAX_FILE_SIZE', '2000'),
 			'url'=>['required','url','regex:/^http(|s):\/\/[A-Z0-9+&@#\/%?=~\-_|!:,.;]+\.[A-Z0-9:+&@#\/%=~_|?\.\-"\']+$/i']
 		]);
 		$fname = PageGenerationController::StoreAdImage($request->file('image'));

@@ -15,7 +15,7 @@ class AdsHash extends Migration
     {
       Schema::table('ads', function (Blueprint $table){
         if (!Schema::hasColumn('ads', 'hash'))
-          $table->string('hash');
+          $table->string('hash')->default("");
       });
     }
 
@@ -26,8 +26,6 @@ class AdsHash extends Migration
      */
     public function down()
     {
-      Schema::table('ads', function (Blueprint $table){
-          $table->dropColumn('hash');
-      });
+
     }
 }
