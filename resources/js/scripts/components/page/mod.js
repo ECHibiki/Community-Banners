@@ -19,8 +19,8 @@ export class ModPage extends Component{
 				   </div>
 				  <hr/>
 				   <div id="lower-master-mod">
+					 	<DonatorBox />
 						<PatreonBanner />
-		        <DonatorBox />
 						<HelperText />
 				   </div>
 				</div>);

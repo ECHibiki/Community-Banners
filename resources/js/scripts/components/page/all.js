@@ -19,8 +19,8 @@ export class AllPage extends Component{
 			    </div>
 				  <hr/>
 			    <div id="lower-master-all">
+						<DonatorBox />
 						<PatreonBanner />
-		        <DonatorBox />
 						<HelperText />
 			   </div>
 			 </div>);

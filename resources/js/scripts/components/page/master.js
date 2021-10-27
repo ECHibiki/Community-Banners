@@ -58,8 +58,8 @@ export class MasterPage extends Component{
 							   </div>
 							  <hr/>
 							   <div id="lower-master-login">
-									<PatreonBanner />
 									<DonatorBox />
+									<PatreonBanner />
 									<HelperText />
 							   </div>
 							</div>
@@ -76,8 +76,8 @@ export class MasterPage extends Component{
 							  <UserContainer/>
 							</div>
 							<div id="lower-master-user">
+								<DonatorBox />
 							  <PatreonBanner />
-					  	  <DonatorBox />
 							  <HelperText />
 							</div>
 						</div>
