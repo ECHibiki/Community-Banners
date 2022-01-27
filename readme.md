@@ -1,3 +1,6 @@
+# NEW VERSION
+Current is discontinued, please use https://github.com/ECHibiki/Community-Banners-2.0
+
 # Community Banners 
 <img src="https://travis-ci.com/ECHibiki/Community-Banners.svg?branch=dev" /><br/>
 BITCOIN: 14K6kHgpRvgKPnktf4e2UVfEaarYEe64n4<br/>
